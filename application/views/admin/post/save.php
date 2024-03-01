@@ -71,6 +71,12 @@
         echo form_dropdown('posted', $data_posted, $posted, 'class="form-control input-lg"');
     ?>
 </div>
+<div class="form-group">
+    <?php 
+        echo form_label('Categorias', 'category_id');
+        echo form_dropdown('category_id', $categories, $category_id, 'class="form-control input-lg"');
+    ?>
+</div>
 <?php echo form_submit('mysubmit', 'Guardar', 'class="btn btn-primary"') ?>
 <?php echo form_close() ?>
 

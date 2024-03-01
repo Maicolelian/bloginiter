@@ -7,6 +7,7 @@
             <th>Fecha de creacion</th>
             <th>Imagen</th>
             <th>Publicado</th>
+            <th>Categoria</th>
             <th>Acciones</th>
         </tr>
         <?php foreach ($posts as $key => $p) : ?>
@@ -17,6 +18,7 @@
             <td><?php echo format_date($p->created_at) ?></td>
             <td><?php echo $p->image != "" ? '<img class="img_post img-thumbnail img-presentation-small" src="' . base_url() . 'uploads/post/' . $p->image . '">' : ""; ?></td>
             <td><?php echo $p->posted ?></td>
+            <td><?php echo $p->category_id ?></td>
             <td>
                 <a class="btn btn-sm btn-primary" 
                     href="<?php echo base_url() . 'admin/post_save/' . $p->post_id ?>">
