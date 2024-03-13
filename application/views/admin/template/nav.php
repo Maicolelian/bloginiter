@@ -7,7 +7,7 @@
                 <img src="<?php echo base_url() ?>assets/img/logo.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Nombre</p>
+                <p><?php echo $this->session->userdata('name') ?></p>
             </div>
         </div>
 
@@ -23,8 +23,18 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                    <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                    <li><a href="<?php echo base_url() ?>admin/welcome"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                    <li><a href="<?php echo base_url() ?>admin/welcome"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span>Usuarios</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url() ?>admin/user_crud/add"><i class="fa fa-circle-o"></i> Crear</a></li>
+                    <li><a href="<?php echo base_url() ?>admin/user_crud"><i class="fa fa-circle-o"></i> Listar</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -43,7 +53,7 @@
                     <span>Categorías</span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>admin/category_save"><i class="fa fa-circle-o"></i> Crear</a></li>
+                    <li><a href="<?php echo base_url() ?>admin/category_list/add"><i class="fa fa-circle-o"></i> Crear</a></li>
                     <li><a href="<?php echo base_url() ?>admin/category_list"><i class="fa fa-circle-o"></i> Listar</a></li>
                 </ul>
             </li>

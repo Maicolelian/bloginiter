@@ -1,14 +1,14 @@
-<table class="table table-bordered">
+<table class="table table-striped table-hover">
     <tbody>
-        <tr>
-            <th style="width: 10px">N°</th>
-            <th>Titulo</th>
-            <th>Descripcion</th>
-            <th>Fecha de creacion</th>
-            <th>Imagen</th>
-            <th>Publicado</th>
-            <th>Categoria</th>
-            <th>Acciones</th>
+        <tr style="font-family: cursive">
+            <th style="background-color:silver; width: 10px">N°</th>
+            <th style="background-color:silver">Titulo</th>
+            <th style="background-color:silver">Descripcion</th>
+            <th style="background-color:silver">Fecha de creacion</th>
+            <th style="background-color:silver">Imagen</th>
+            <th style="background-color:silver">Publicado</th>
+            <th style="background-color:silver">Categoria</th>
+            <th style="background-color:silver">Acciones</th>
         </tr>
         <?php foreach ($posts as $key => $p) : ?>
         <tr>

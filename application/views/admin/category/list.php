@@ -1,9 +1,9 @@
-<table class="table table-bordered">
+<table class="table table-striped table-hover">
     <tbody>
-        <tr>
-            <th style="width: 10px">N°</th>
-            <th>Nombre</th>
-            <th>Acciones</th>
+        <tr style="font-family: cursive">
+          <th style="background-color:silver; width: 10px">N°</th>
+          <th style="background-color:silver">Nombre</th>
+          <th style="background-color:silver">Acciones</th>
         </tr>
         <?php foreach ($categories as $key => $c) : ?>
         <tr>
@@ -14,7 +14,6 @@
                     href="<?php echo base_url() . 'admin/category_save/' . $c->category_id ?>">
                     <i class="fas fa-edit"></i> Editar
                 </a>
-                <br>
                 <a class="btn btn-sm btn-danger" 
                     data-toggle="modal" 
                     data-target="#deleteModal"

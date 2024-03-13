@@ -2,10 +2,10 @@
 
 function posted()
 {
-    return array("si" => "si", "no" => "no");
+    return array("no" => "no", "si" => "si");
 }
 
-function categorie_to_form($categories) {
+function categories_to_form($categories) {
     $aCategories = array();
 
     foreach ($categories as $key => $c) {
@@ -17,5 +17,15 @@ function categorie_to_form($categories) {
 
 function clean_name($name)
 {
-    return url_title($name, '-', TRUE);
+    return convert_accented_characters(url_title($name, '-', TRUE));
+}
+
+function all_images() {
+    $CI = & get_instance();
+    $CI->load->helper('directory');
+
+    $dir = "uploads/post";
+    $files = directory_map($dir);
+
+    return $files;
 }

@@ -3,14 +3,17 @@
     <?php echo form_label('Titulo','title'); ?>
     <?php 
         $text_input = array(
-            'name'  => 'title', 
-            'id'    => 'title',
-            'value' => $title,
-            'class' => 'form-control input-lg',
+            'name'       => 'title', 
+            'minlength'  => 10, 
+            'maxlength'  => 65, 
+            'required'   => 'required', 
+            'id'         => 'title',
+            'value'      => $title,
+            'class'      => 'form-control input-lg',
         );
         echo form_input($text_input);
     ?>
-    <?php echo form_error('title','<div class="text-error">','</div>') ?>
+    <?php echo form_error('title','<div class="text-danger">','</div>') ?>
 </div>
 <div class="form-group">
     <?php echo form_label('Url limpia','url_clean'); ?>
