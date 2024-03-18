@@ -32,8 +32,8 @@
         </form>
         <!-- /.social-auth-links -->
 
-        <a href="#">Olvide contraseña</a><br>
-        <a href="<?php echo base_url().'app/create_user' ?>" class="text-center">Registrarse</a>
+        <a href="<?php echo base_url() ?>app/recover">Olvide contraseña</a><br>
+        <a href="register" class="text-center">Registrarse</a>
 
     </div>
     <!-- /.login-box-body -->
@@ -56,13 +56,13 @@
                     $('[name="loginToken"]').val(response.token);
                     console.log(response);
                     if (response.status == 1) {
-                        window.location.href = '<?php echo base_url() ?>admin';
+                        window.location.href = '<?php echo base_url() ?>';
                     } else if (response.status == 0 && response.on_hold) {
                         $('form').hide();
                         $('#on-hold-message').show();
-                        alert('Intentos de inicio de sesión excesivos.');
+                        $.toaster({priority: 'warning', title: 'Intentos de inicio de sesión excesivos.', message: ''});
                     } else {
-                        alert('Login fallido', 'Login fallido ' + response.count + ' de ' + $('#max_allowed_attempts').val(), 'error');
+                        $.toaster({priority: 'warning', title: 'Login fallido', message: ''});
                     }
                 }
             });

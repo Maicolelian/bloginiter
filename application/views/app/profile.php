@@ -96,6 +96,7 @@
                     );
                     echo form_input($text_input);
                     ?>
+                    <?php echo form_error('username', '<div class="text-error"', '</div>') ?>
                 </div>
                 <div class="form-group">
                     <?php
@@ -109,6 +110,8 @@
                     );
                     echo form_input($text_input);
                     ?>
+                    <?php echo form_error('email', '<div class="text-error"', '</div>') ?>
+                   
                 </div>
             </div>
         </div>

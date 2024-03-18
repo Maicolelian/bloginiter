@@ -35,6 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
+define('PAGE_SIZE', 2);
 define('APP_VERSION', "1");
 define('APP_NAME', "BlogIniter");
 define('PROJECT_FOLDER', "curso01");

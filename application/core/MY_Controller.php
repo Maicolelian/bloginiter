@@ -29,15 +29,27 @@ class MY_Controller extends Auth_Controller {
         $this->require_min_level($level);
 
         if (!$this->auth_data) {
-            // redireccionar
-        }
+            $this->session->set_userdata(array(
+                'email' => $this->auth_data->email,
+                'name' => $this->auth_data->username,
+                'id' => $this->auth_data->user_id,
+                'auth_level' => $this->auth_data->auth_level
+            ));
+        }  
+    }
 
-        $this->session->set_userdata(array(
-            'email' => $this->auth_data->email,
-            'name' => $this->auth_data->username,
-            'id' => $this->auth_data->user_id,
-            'auth_level' => $this->auth_data->auth_level
-        ));
+    public function optional_session_auto($level) {
+
+        $this->verify_min_level($level);
+
+        if (!$this->auth_data) {
+            $this->session->set_userdata(array(
+                'email' => $this->auth_data->email,
+                'name' => $this->auth_data->username,
+                'id' => $this->auth_data->user_id,
+                'auth_level' => $this->auth_data->auth_level
+            ));
+        }  
     }
 
     /*     * *************
